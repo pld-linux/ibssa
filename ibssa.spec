@@ -12,12 +12,12 @@ URL:		https://www.openfabrics.org/
 BuildRequires:	glib2-devel >= 1:2.2
 BuildRequires:	libibumad-devel >= 1.3.10
 BuildRequires:	libibverbs-devel >= 1.1.8
-BuildRequires:	librdmacm-devel >= 1.0.19
+BuildRequires:	librdmacm-devel >= 1.0.21
 BuildRequires:	pkgconfig
 Requires:	glib2 >= 1:2.2
 Requires:	libibumad >= 1.3.10
 Requires:	libibverbs >= 1.1.8
-Requires:	librdmacm(ssa) >= 1.0.19
+Requires:	librdmacm >= 1.0.21
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
