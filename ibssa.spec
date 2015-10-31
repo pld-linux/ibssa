@@ -2,12 +2,12 @@
 Summary:	InfiniBand SSA service
 Summary(pl.UTF-8):	Usługa InfiniBand SSA
 Name:		ibssa
-Version:	0.0.8
+Version:	0.0.9
 Release:	1
 License:	BSD or GPL v2
 Group:		Networking/Utilities
 Source0:	https://www.openfabrics.org/downloads/management/ssa/%{name}-%{version}.tar.gz
-# Source0-md5:	d287b22ee37dee7ba385fade87b0b422
+# Source0-md5:	26e2b92d0750fe50d3ccd51c18b0d6f7
 URL:		https://www.openfabrics.org/
 BuildRequires:	glib2-devel >= 1:2.2
 BuildRequires:	libibumad-devel >= 1.3.10
@@ -34,6 +34,7 @@ rozproszonego SA, obecnie odpowiadającego na zapytania o rekordy
 
 %build
 %configure \
+	GSTACK=/usr/bin/gstack \
 	rdmascript=rdma \
 	--disable-silent-rules
 %{__make}
@@ -55,3 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING README ibssa_opts.cfg ssa_release_notes.txt
 %attr(755,root,root) %{_sbindir}/ibssa
 #%attr(754,root,root) /etc/rc.d/init.d/ibssa
+%{_mandir}/man1/ibssa.1*
+%{_mandir}/man7/ibssa.7*
